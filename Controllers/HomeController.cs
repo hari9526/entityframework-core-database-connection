@@ -1,4 +1,5 @@
-﻿using DatabaseConnectionEntityFrameworkCore.Models;
+﻿using DatabaseConnectionEntityFrameworkCore.DataDB;
+using DatabaseConnectionEntityFrameworkCore.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -20,6 +21,8 @@ namespace DatabaseConnectionEntityFrameworkCore.Controllers
 
         public IActionResult Index()
         {
+            RestaurantDBContext restaurant = new RestaurantDBContext();
+            var customer = restaurant.Customers; 
             return View();
         }
 
